@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import ClockMain from './02/ClockMain';
 import FrontEnd from './03/FrontEnd';
-
+import Lotto from './05/Lotto';
 function App() {
   return (
     // <div className="App">
@@ -21,8 +21,9 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-           <FrontEnd/>
+          //  <FrontEnd/>
     // <ClockMain/>
+    <Lotto/>
  
   );
 }

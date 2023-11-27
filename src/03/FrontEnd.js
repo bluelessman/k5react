@@ -1,5 +1,5 @@
 import FrontArticle from "./FrontArticle";
-import Like from "../04/Like";
+
 function FrontEnd() {
     const data = [{
         title: 'HTML',
@@ -30,15 +30,13 @@ function FrontEnd() {
         <>
         {
             data.map((item,idx)=>
-            <>
                 <FrontArticle
                 key = {`article${idx}`}
                 title= {item.title}
                 href={item.href}
                 text={item.text}
                 />
-                <Like key={`like${idx}`}/>
-            </>
+
             )
         }
             {/* <FrontArticle
