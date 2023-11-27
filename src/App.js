@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ClockMain from './02/ClockMain';
-// import FrontEnd from './03/FrontEnd';
+import FrontEnd from './03/FrontEnd';
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
     //     </a>
     //   </header>
     // </div>
-    //        <FrontEnd/>
-    <ClockMain/>
+           <FrontEnd/>
+    // <ClockMain/>
  
   );
 }
