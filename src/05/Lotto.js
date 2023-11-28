@@ -1,27 +1,36 @@
-import { useState } from 'react';
-import Style from './Lotto.module.css'
+import LogoP from "../01/LogoP"
+import Styles from "./Lotto.module.css"
+import { useState,useEffect } from "react";
 export default function Lotto() {
-    const [tags,setTags]=useState();
-    const handleClick = (e)=>{
-        e.preventDefault();
-        setTags(Math.random());
-    }
-  return (
-        <main className={Style.m}>
-      <section className={Style.sec}>
-            <form className={Style.fm}>
-                <div className={Style.fdiv}>
-                    <div className={Style.div1} id="d1">
-                        {tags}
-                    </div>
-                </div>
-                <div className={Style.fdiv}>
-                    <div className={Style.div2} id="d2">
-                        <button className={Style.bt} onClick={handleClick}>로또번호생성</button>
-                    </div>
-                </div>
-            </form>
-        </section>
-    </main>
-  )
+    const [tags,setTags] = useState();
+    const handleCheck = (n)=>{
+        let lottoNum = [];
+        while(lottoNum.length<7){
+            let n = Math.floor(Math.random()*45)+1;
+            if(!lottoNum.includes(n)){
+                lottoNum.push(n);
+            }
+        }
+        lottoNum.splice(6,0,"+");
+
+        let tmTags = lottoNum.map((item,idx)=>
+        <span key={`sp${idx}`} className={Styles[`sp${Math.floor(parseInt(item)/10)}`]}>{item}</span>
+        );
+        console.log(tmTags);
+        setTags(tmTags);
+
+    };
+    useEffect(()=>{
+        setTags("Lotto번호 생성기")
+    },[]);
+    return (
+        <div className={Styles.divLotto}>
+            <div className={Styles.d1}>
+                <p className={Styles.divp}>{tags}</p>
+            </div>
+            <div className={Styles.d2}>
+                <button className={Styles.bt} onClick={handleCheck}>로또번호생성</button>
+            </div>
+        </div>
+    );
 }

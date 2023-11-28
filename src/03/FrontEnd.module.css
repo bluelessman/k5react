@@ -1,13 +1,4 @@
 
-* {
-    /* 바깥쪽 여백 */
-    margin: 0px;
-    /* 안쪽 여백 */
-    padding: 0px;
-
-}
-
-
  .divArticle {
     margin: 30px;
     padding: 10px;
@@ -34,7 +25,7 @@
     text-align: center;
 
 }
-img{
+.divimg>img{
     border-radius: 50%;
 }
 .divArticle p {
