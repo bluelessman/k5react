@@ -1,13 +1,14 @@
 import { BiCameraMovie, IconName } from "react-icons/bi";
 import { MdOutlineLocalMovies } from "react-icons/md";
+import TailH1 from "../ui/TailH1";
 export default function Boxoffice() {
   return (
     <div className="container mx-auto h-screen">
       <div className="flex flex-col justify-center items-center w-full h-full">
         <div className="flex m-8">
-        <MdOutlineLocalMovies className="text-5xl text-rose-600"/>
-        <span className="font-extrabold text-4xl text-orange-800">박스오피스</span>
-          <BiCameraMovie className="text-5xl text-rose-600"/>
+        <MdOutlineLocalMovies className="text-5xl text-sky-500"/>
+        <TailH1 title="박스오피스"/>
+          <BiCameraMovie className="text-5xl text-sky-500"/>
         </div>
         <div className="relative overflow-x-auto w-3/4 shadow-md sm:rounded-lg">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
