@@ -29,7 +29,7 @@ export default function Lotto() {
                 <p className={Styles.divp}>{tags}</p>
             </div>
             <div className={Styles.d2}>
-                <button className={Styles.bt} onClick={handleCheck}>로또번호생성</button>
+                <button className={Styles.bt} onClick={()=>handleCheck()}>로또번호생성</button>
             </div>
         </div>
     );

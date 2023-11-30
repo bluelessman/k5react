@@ -5,6 +5,7 @@ import FrontEnd from './03/FrontEnd';
 import Lotto from './05/Lotto';
 import Like from './04/Like';
 import Boxoffice from './06/Boxoffice';
+import Frcst from './07/Frcst';
 function App() {
   return (
     // <div className="App">
@@ -26,7 +27,8 @@ function App() {
           //  <FrontEnd/>
     // <ClockMain/>
     // <Lotto/>
-    <Boxoffice/>
+    // <Boxoffice/>
+    <Frcst/>
 
  
   );
