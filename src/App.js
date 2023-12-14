@@ -7,6 +7,7 @@ import Like from './04/Like';
 import Boxoffice from './06/Boxoffice';
 import Frcst from './07/Frcst';
 import RefTest from './08/RefTest';
+import Traffic from './09/Traffic';
 function App() {
   return (
     // <div className="App">
@@ -28,10 +29,10 @@ function App() {
           //  <FrontEnd/>
     // <ClockMain/>
     // <Lotto/>
-    <Boxoffice/>
+    // <Boxoffice/>
     // <Frcst/>
     // <RefTest/>
-
+    <Traffic/>
  
   );
 }

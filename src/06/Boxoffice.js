@@ -41,7 +41,7 @@ export default function Boxoffice() {
         <td key={`td3${movie.rnum}`} className="px-6 py-4 text-center ">
           {parseInt(movie.rankInten) >= 0 ? parseInt(movie.rankInten) === 0 ? "-" : <span className="text-red-500">▲{movie.rankInten}</span> : <span className="text-blue-500">▼{Math.abs(parseInt(movie.rankInten))}</span>}
         </td>
-      </tr>));;
+      </tr>));
   }, [boxlist])
   return (
     <div className="container mx-auto h-screen">
