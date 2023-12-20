@@ -9,7 +9,8 @@ export default function Traffic() {
     const [c2, setC2] = useState();
     const [selC1, setSelC1] = useState();
     const [selC2, setSelC2] = useState();
-    const [txt,setTxt] = useState();
+    const [detail,setDetail] = useState();
+    const detailKey = ['사고건수', '사망자수', '중상자수', '경상자수', '부상신고자수'] ;
     const getData = async () =>{
         const apiKey = process.env.REACT_APP_APIKEY;
         let url = `https://api.odcloud.kr/api/15070282/v1/uddi:00e5cb5a-ecdf-4190-a499-ba3a6b2a8db9?page=1&perPage=20&returnType=JSON&serviceKey=`;
@@ -35,15 +36,33 @@ export default function Traffic() {
     },[selC1])
 
     useEffect(()=>{
-        let tm = tdata.filter((item)=>item.사고유형_대분류===selC1&&item.사고유형_중분류===selC2);
-        let t;
-        for(var key in tm[0]){
-            t = <div>{key} : {tm[0][key]}</div>;
-        }
-        console.log(t);
-        setTxt(t);
-        console.log(txt);
-    },[selC2])
+        if (tdata  === undefined) return ;
+        let tm = tdata.filter((item) => item.사고유형_대분류 === selC1 &&
+                                        item.사고유형_중분류 === selC2)
+        tm = tm[0] ;
+        console.log("detail", tm)          
+    
+        if (tm === undefined) return ;
+        tm = detailKey.map((k, idx) => <div className='flex flex-col' key={`d1${idx}`}>
+                                        <div className='inline-flex 
+                                                        justify-center 
+                                                        items-center 
+                                                        mx-2
+                                                         bg-sky-900
+                                                         text-white
+                                                        p-2'>{k}</div>
+                                        <div className='inline-flex 
+                                                        justify-center 
+                                                        items-center  
+                                                        text-lg
+                                                        mx-2
+                                                        bg-sky-100
+                                                         text-sky-900
+                                                        p-2'>{parseInt(tm[k]).toLocaleString('ko-KR')}</div>
+                                       </div>
+                                        )
+        setDetail(tm);
+      }, [selC2]);
 
   return (
     <div className="container mx-auto h-screen">
@@ -56,7 +75,7 @@ export default function Traffic() {
             {c1&&<TrafficNav title={'중분류'} carr={c2} sel={selC2} setSel={setSelC2}/>}
         </div>
         <div>
-            {txt}
+            {detail}
         </div>
         </div>
 

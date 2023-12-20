@@ -8,6 +8,7 @@ import Boxoffice from './06/Boxoffice';
 import Frcst from './07/Frcst';
 import RefTest from './08/RefTest';
 import Traffic from './09/Traffic';
+import Gallery from './10/Gallery';
 function App() {
   return (
     // <div className="App">
@@ -32,7 +33,8 @@ function App() {
     // <Boxoffice/>
     // <Frcst/>
     // <RefTest/>
-    <Traffic/>
+    // <Traffic/>
+    <Gallery/>
  
   );
 }
