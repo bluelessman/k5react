@@ -13,24 +13,6 @@ export default function Festival() {
   const [gu, setGu] = useState();
   const sel = useRef();
 
-
-  // const handleResetData = (e) => {
-  //   e.preventDefault();
-  //   sel.current.value = "default";
-  //   setCon("");
-  // };
-
-  // const handleGetData = (e) => {
-  //   e.preventDefault();
-  //   setCon(tdata.filter((item) => item.GUGUN_NM===sel.current.value)
-  //     .map((item, idx) =>
-  //       <TailCard imgSrc={item.MAIN_IMG_NORMAL}
-  //         key={`card${idx}${item.GUGUN_NM}`}
-  //         title={item.TITLE}
-  //         subtitle={item.TRFC_INFO}
-  //         tags={item.USAGE_DAY_WEEK_AND_TIME} />)
-  //   );
-  // }
   const handleClick = ()=>{
     console.log(sel.current.value);
     setCon(tdata.filter((item) => item.GUGUN_NM===sel.current.value)
@@ -79,8 +61,6 @@ export default function Festival() {
               {gu}
             </select>
           </div>
-          {/* <TailButton caption=' 확 인 ' bcolor='sky' handleClick={(e) => handleGetData(e)} />
-          <TailButton caption=' 취 소 ' bcolor='sky' handleClick={(e) => handleResetData(e)} /> */}
         </form>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
           {con}
