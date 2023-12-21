@@ -9,8 +9,8 @@ import './App.css';
 // import RefTest from './08/RefTest';
 // import Traffic from './09/Traffic';
 // import Gallery from './10/Gallery';
-// import Festival from './10/Festival';
-import Festival2 from './10/Festival2';
+import Festival from './10/Festival';
+
 function App() {
   return (
     // <div className="App">
@@ -37,7 +37,7 @@ function App() {
     // <RefTest/>
     // <Traffic/>
     // <Gallery/>
-    <Festival2/>
+    <Festival/>
  
   );
 }
