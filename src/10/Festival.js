@@ -14,7 +14,6 @@ export default function Festival() {
   const sel = useRef();
 
   const handleClick = ()=>{
-    console.log(sel.current.value);
     setCon(tdata.filter((item) => item.GUGUN_NM===sel.current.value)
     .map((item, idx) =>
       <TailCard imgSrc={item.MAIN_IMG_NORMAL}
