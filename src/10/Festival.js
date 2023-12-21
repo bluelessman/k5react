@@ -2,7 +2,8 @@ import TailH1 from '../ui/TailH1';
 // import TailButton from '../ui/TailButton';
 import TailCard from '../ui/TailCard';
 import { FcPicture } from "react-icons/fc";
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect} from 'react';
+import TailSelect from '../ui/TailSelect';
 
 export default function Festival() {
   //환경변수값 가져오기
@@ -10,11 +11,10 @@ export default function Festival() {
   //fetch 데이터 저장
   const [tdata, setTdata] = useState([]);
   const [con, setCon] = useState();
-  const [gu, setGu] = useState();
-  const sel = useRef();
+  const [gu, setGu] = useState([]);
 
-  const handleClick = ()=>{
-    setCon(tdata.filter((item) => item.GUGUN_NM===sel.current.value)
+  const handleClick = (e)=>{
+    setCon(tdata.filter((item) => item.GUGUN_NM===e.target.value)
     .map((item, idx) =>
       <TailCard imgSrc={item.MAIN_IMG_NORMAL}
         key={`card${idx}${item.GUGUN_NM}`}
@@ -39,7 +39,7 @@ export default function Festival() {
   }, [apikey])
 
   useEffect(() => {
-    setGu(Array.from(new Set(tdata.map(item => item.GUGUN_NM))).map((item, idx) => <option value={item} key={`sel${idx}`}>{item}</option>));
+    setGu(Array.from(new Set(tdata.map(item => item.GUGUN_NM))).map(item=>item));
   }, [tdata])
 
   return (
@@ -51,14 +51,7 @@ export default function Festival() {
         </div>
         <form name="kform" className="my-8 w-4/5 flex justify-center items-center">
           <div className='w-1/2 mx-4'>
-            <select ref={sel} onChange={()=>handleClick()}   className="shadow-sm 
-                                                   bg-gray-50 border border-gray-300
-                                                   text-gray-900 text-sm rounded-lg
-                                                   focus:ring-blue-500 focus:border-blue-500 
-                                                   block w-full p-2.5">
-              <option key='default' value="default">--지역선택--</option>
-              {gu}
-            </select>
+            <TailSelect opItem={gu} handleChange={(e)=>handleClick(e)} />
           </div>
         </form>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
