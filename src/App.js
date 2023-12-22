@@ -9,8 +9,9 @@ import './App.css';
 // import RefTest from './08/RefTest';
 // import Traffic from './09/Traffic';
 // import Gallery from './10/Gallery';
-import Festival from './10/Festival';
-
+// import Festival from './10/Festival';
+// import Rmain from './12/Rmain.js'
+import Frcst from './13/FcstMain.js';
 function App() {
   return (
     // <div className="App">
@@ -37,8 +38,9 @@ function App() {
     // <RefTest/>
     // <Traffic/>
     // <Gallery/>
-    <Festival/>
- 
+    // <Festival/>
+    // <Rmain/>
+    <Frcst/>
   );
 }
 
