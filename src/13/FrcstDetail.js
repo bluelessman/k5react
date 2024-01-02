@@ -35,6 +35,7 @@ export default function FrcstDetail() {
     }
 
     useEffect(() => {
+        console.log(url);
         getData(url);
     }, [url])
 

@@ -12,6 +12,7 @@ import './App.css';
 // import Festival from './10/Festival';
 // import Rmain from './12/Rmain.js'
 import FrcstMain from './13/FrcstMain.js';
+import EX01 from './90/EX01.js';
 function App() {
   return (
     // <div className="App">
@@ -40,7 +41,8 @@ function App() {
     // <Gallery/>
     // <Festival/>
     // <Rmain/>
-    <FrcstMain/>
+    // <FrcstMain/>
+    <EX01/>
   );
 }
 
